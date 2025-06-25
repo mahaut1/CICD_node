@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
 const User = require('./model/user')
-const { specs, swaggerUi } = require('./swagger');
+// const { specs, swaggerUi } = require('./swagger');
 dotenv.config();
 
 mongoose.set("strictQuery", false);
