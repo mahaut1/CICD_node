@@ -24,9 +24,4 @@ const bookSchema = new Schema({
   timestamps: true // Ajoute automatiquement createdAt et updatedAt
 });
 
-// Index pour améliorer les performances de recherche
-bookSchema.index({ title: 1 });
-bookSchema.index({ author: 1 });
-bookSchema.index({ year: 1 });
-
 module.exports = mongoose.model('Book', bookSchema);
