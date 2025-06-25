@@ -1,0 +1,24 @@
+{
+    "builds": [
+        {
+            "src":"serveur.js",
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "dist/**"
+                ]
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "serveur.py"
+        }
+    ],
+    "git": {
+        "deploymentEnabled": {
+            "main": false
+        }
+    }
+}
