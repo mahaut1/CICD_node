@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
 const User = require('./model/user');
-const Book = require('./model/book');
+const Book = require('./model/Book');
 
 dotenv.config();
 mongoose.set("strictQuery", false);
