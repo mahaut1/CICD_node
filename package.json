@@ -8,5 +8,10 @@
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-dist": "^5.19.0",
     "swagger-ui-express": "^5.0.1"
-  }
+  },
+
+  "scripts": {
+  "start": "node server.js"
+}
+
 }
