@@ -7,7 +7,12 @@ terraform {
   }
 }
 
-provider "docker" {}
+provider "docker" {
+  # Uses DOCKER_HOST environment variable if set, otherwise defaults to system default
+  # For macOS Docker Desktop: export DOCKER_HOST=unix:///Users/$USER/.docker/run/docker.sock
+  # For Linux: export DOCKER_HOST=unix:///var/run/docker.sock (or leave unset)
+  # For Windows: varies by setup
+}
 
 # Réseau commun pour tous les conteneurs
 resource "docker_network" "internal_network" {
@@ -34,7 +39,7 @@ resource "docker_container" "mysql" {
   ]
 
   volumes {
-    host_path      = "${path.module}/SQLFiles"
+    host_path = abspath("${path.module}/SQLFiles")
     container_path = "/docker-entrypoint-initdb.d"
   }
 
@@ -133,12 +138,12 @@ resource "docker_container" "react" {
   ]
 
   volumes {
-    host_path      = "${path.module}"
+    host_path = abspath("${path.module}")
     container_path = "/app"
   }
 
   volumes {
-    host_path      = "/app/node_modules"
+    host_path      = abspath("${path.module}/node_modules")
     container_path = "/app/node_modules"
   }
 
@@ -173,7 +178,7 @@ resource "docker_container" "mongo" {
   }
 
   volumes {
-    host_path      = "${path.module}/mongo-data"
+    host_path = abspath("${path.module}/mongo-data")
     container_path = "/data/db"
   }
 
