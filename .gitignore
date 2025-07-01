@@ -80,3 +80,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.lnk
+
+#mongodb data
+.mong-data/
