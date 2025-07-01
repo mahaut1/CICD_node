@@ -20,7 +20,3 @@ build/
 # Terraform
 .terraform/
 .terraform.lock.hcl
-
-# Docker setup files should be committed for team collaboration
-# setup-docker-env.sh - keep this
-# DOCKER_SETUP.md - keep this
