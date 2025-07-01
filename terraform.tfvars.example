@@ -1,0 +1,5 @@
+MYSQL_ROOT_PASSWORD = "your_mysql_password_here"
+MYSQL_DATABASE      = "ynov_ci"
+REACT_APP_API_URL   = "http://localhost:3001"
+MONGODB_URL         = "your_mongodb_connection_string_here"
+PORT                = "8000"

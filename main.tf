@@ -203,7 +203,7 @@ resource "docker_container" "nodeapp" {
 
   ports {
     internal = 8000
-    external = 8000
+    external = 3001  # Changed from 8000 to 3001 to avoid conflict with FastAPI
   }
 
   env = [
